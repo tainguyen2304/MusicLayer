@@ -1,469 +1,492 @@
-$(document).ready(function() {
+$(document).ready(function () {
   const listSongs = $('#list-songs');
-  
+
   const app = {
-      dataAlbum: [
+    dataAlbum: [
       {
-        class:"Hot-Hits-VietNam",
-        img:"./assets/img/haanhtuan.jpg",
-        title:"Hot hits vietnam",
-        description:"Đông tới Tây, đây là những ca khúc thịnh hành nhất ở Việt Nam."
+        class: "Hot-Hits-VietNam",
+        img: "./assets/img/haanhtuan.jpg",
+        title: "Hot hits vietnam",
+        description: "Đông tới Tây, đây là những ca khúc thịnh hành nhất ở Việt Nam."
       },
       {
-        class:"Vpop-Khong-The-Thieu",
-        img:"./assets/img/V-pop.jpg",
-        title:"V-Pop Không Thể Thiếu",
-        description:"V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Hứa Kim Tuyền, Hoàng Duyên"
+        class: "Vpop-Khong-The-Thieu",
+        img: "./assets/img/V-pop.jpg",
+        title: "V-Pop Không Thể Thiếu",
+        description: "V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Hứa Kim Tuyền, Hoàng Duyên"
       },
       {
-      class:"Pop-Rising",
-      img:"./assets/img/poprising.jpg",
-      title:"Pop Rising Vietnam",
-      description:"Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Orange, Hoàng Dũng"
+        class: "Pop-Rising",
+        img: "./assets/img/poprising.jpg",
+        title: "Pop Rising Vietnam",
+        description: "Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Orange, Hoàng Dũng"
       },
       {
-      class:"Nghe-gi",
-      img:"./assets/img/nghegi.jpg",
-      title:"Thiên Hạ Nghe Gì",
-      description:"Những gì mà người bên cạnh bạn đang nghe... Ảnh bìa: The Weeknd, Ariana Grande"
+        class: "Nghe-gi",
+        img: "./assets/img/nghegi.jpg",
+        title: "Thiên Hạ Nghe Gì",
+        description: "Những gì mà người bên cạnh bạn đang nghe... Ảnh bìa: The Weeknd, Ariana Grande"
       },
       {
-      class:"Fresh-Find",
-      img:"./assets/img/freshFind.jpg",
-      title:"Fresh Finds Vietnam",
-      description:"Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: buitruonglinh"
+        class: "Fresh-Find",
+        img: "./assets/img/freshFind.jpg",
+        title: "Fresh Finds Vietnam",
+        description: "Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: buitruonglinh"
       },
       {
-      class:"Top50-VietNam",
-      img:"./assets/img/top50.jpg",
-      title:"Top 50 - Vietnam",
-      description:"Your daily update of the most played tracks right now - Vietnam."
+        class: "Top50-VietNam",
+        img: "./assets/img/top50.jpg",
+        title: "Top 50 - Vietnam",
+        description: "Your daily update of the most played tracks right now - Vietnam."
       },
       {
-      class:"Top50-Global",
-      img:"./assets/img/top50Global.jpg",
-      title:"Top 50 - Global",
-      description:"Your daily update of the most played tracks right now - Vietnam."
+        class: "Top50-Global",
+        img: "./assets/img/top50Global.jpg",
+        title: "Top 50 - Global",
+        description: "Your daily update of the most played tracks right now - Vietnam."
       },
       {
-      class:"Sleep",
-      img:"./assets/img/sleep.jpg",
-      title:"Sleep",
-      description:"Gentle ambient piano to help you fall asleep."
+        class: "Sleep",
+        img: "./assets/img/sleep.jpg",
+        title: "Sleep",
+        description: "Gentle ambient piano to help you fall asleep."
       },
       {
-      class:"Peaceful-Piano",
-      img:"./assets/img/peacefull.jpg",
-      title:"Peaceful Piano",
-      description:"Relax and indulge with beautiful piano pieces"
+        class: "Peaceful-Piano",
+        img: "./assets/img/peacefull.jpg",
+        title: "Peaceful Piano",
+        description: "Relax and indulge with beautiful piano pieces"
       },
       {
-      class:"Tat-Den",
-      img:"./assets/img/tatden.jpg",
-      title:"Tắt Đèn",
-      description:"Không gì bằng một giấc ngủ ngon cùng những giai điệu đẹp."
+        class: "Tat-Den",
+        img: "./assets/img/tatden.jpg",
+        title: "Tắt Đèn",
+        description: "Không gì bằng một giấc ngủ ngon cùng những giai điệu đẹp."
       },
       {
-      class:"Baby-Sleep",
-      img:"./assets/img/babysleep.jpg",
-      title:"Baby Sleep",
-      description:"Soothing instrumental music for sleepy babies."
+        class: "Baby-Sleep",
+        img: "./assets/img/babysleep.jpg",
+        title: "Baby Sleep",
+        description: "Soothing instrumental music for sleepy babies."
       },
       {
-      class:"Rain-Sounds",
-      img:"./assets/img/RainSounds.jpg",
-      title:"Rain Sounds",
-      description:"Steady rain without any thunder."
+        class: "Rain-Sounds",
+        img: "./assets/img/RainSounds.jpg",
+        title: "Rain Sounds",
+        description: "Steady rain without any thunder."
       },
       {
-        class:"Em-Dem",
-        img:"./assets/img/emDEM.jpg",
-        title:"Êm Đềm",
-        description:"Thư giãn cùng những giai điệu dịu êm"
+        class: "Em-Dem",
+        img: "./assets/img/emDEM.jpg",
+        title: "Êm Đềm",
+        description: "Thư giãn cùng những giai điệu dịu êm"
       },
       {
-          class:"Ta-Noi-No-Dzui",
+        class: "Ta-Noi-No-Dzui",
 
-          img:"./assets/img/TANOINOVUI.jpg",
-          title:"Ta Nói Nó Dzui",
-          description:"Cười như mọi ngày, cày như mọi người. "
+        img: "./assets/img/TANOINOVUI.jpg",
+        title: "Ta Nói Nó Dzui",
+        description: "Cười như mọi ngày, cày như mọi người. "
       },
       {
-        class:"Phut-Co-Don-Ngay-Mua",
-        img:"./assets/img/phutcodonngaymua.jpg",
-        title:"Phút Cô Đơn Ngày Mưa",
-        description:"Giọt mưa trên cửa kính gợi ký ức về một thời đã xa."
+        class: "Phut-Co-Don-Ngay-Mua",
+        img: "./assets/img/phutcodonngaymua.jpg",
+        title: "Phút Cô Đơn Ngày Mưa",
+        description: "Giọt mưa trên cửa kính gợi ký ức về một thời đã xa."
       },
       {
-        class:"Dieu-Buon-Nhat",
+        class: "Dieu-Buon-Nhat",
 
-        img:"./assets/img/dieubuonhat.jpg",
-        title:"Điều Buồn Nhất",
-        description:"Điều buồn nhất là anh biết lại làm như không biết... Ảnh bìa: T.R.I"
+        img: "./assets/img/dieubuonhat.jpg",
+        title: "Điều Buồn Nhất",
+        description: "Điều buồn nhất là anh biết lại làm như không biết... Ảnh bìa: T.R.I"
       },
       {
-        class:"Alone-Again",
+        class: "Alone-Again",
 
-        img:"./assets/img/aloneagain.jpg",
-        title:"Alone Again",
-        description:"Being alone (again) can be tough, but these songs will keep you company."
+        img: "./assets/img/aloneagain.jpg",
+        title: "Alone Again",
+        description: "Being alone (again) can be tough, but these songs will keep you company."
       },
       {
-      class:"Young-Wild-Free",
-      img:"./assets/img/youndandFree.jpg",
-      title:"Young, Wild & Free",
-      description:"That’s how its supposed to be. Living young, wild and free!"
+        class: "Young-Wild-Free",
+        img: "./assets/img/youndandFree.jpg",
+        title: "Young, Wild & Free",
+        description: "That’s how its supposed to be. Living young, wild and free!"
       },
       {
-      class:"New-Music-Friday-Vietnam",
-      img:"./assets/img/friday.jpg",
-      title:"New Music Friday Vietnam",
-      description:"Những chiếc nhạc mới trong tuần, được tuyển chọn cẩn thận. Ảnh bìa: Ngọt"
+        class: "New-Music-Friday-Vietnam",
+        img: "./assets/img/friday.jpg",
+        title: "New Music Friday Vietnam",
+        description: "Những chiếc nhạc mới trong tuần, được tuyển chọn cẩn thận. Ảnh bìa: Ngọt"
       },
       {
-        class:"Save-Your-Tears-Remix",
-        img:"./assets/img/saveyourremix.jpg",
-        title:"Save Your Tears (Remix)",
-        description:"The Weeknd,Ariana Grande"
+        class: "Save-Your-Tears-Remix",
+        img: "./assets/img/saveyourremix.jpg",
+        title: "Save Your Tears (Remix)",
+        description: "The Weeknd,Ariana Grande"
       },
       {
-      class:"Page-Khi-Em-Lon",
-      img:"./assets/img/khiemlon.jpg",
-      title:"khi em lớn",
-      description:"orange,hoang dung"
+        class: "Page-Khi-Em-Lon",
+        img: "./assets/img/khiemlon.jpg",
+        title: "khi em lớn",
+        description: "orange,hoang dung"
       },
       {
-      class:"de-quen",
-      img:"./assets/img/dequen.jpg",
-      title:"để quên",
-      description:"Ngọt"
+        class: "de-quen",
+        img: "./assets/img/dequen.jpg",
+        title: "để quên",
+        description: "Ngọt"
       },
       {
-        class:"Intense-Studying",
-        img:"./assets/img/studying.jpg",
-        title:"Intense Studying",
-        description:"Focus-enhancing piano for your study session."
-        },
+        class: "Intense-Studying",
+        img: "./assets/img/studying.jpg",
+        title: "Intense Studying",
+        description: "Focus-enhancing piano for your study session."
+      },
       {
-        class:"rang-khon",
+        class: "rang-khon",
 
-        img:"./assets/img/rangkhon.jpg",
-        title:"Răng Khôn (feat. RIN9)",
-        description:"Phí Phương Anh"
+        img: "./assets/img/rangkhon.jpg",
+        title: "Răng Khôn (feat. RIN9)",
+        description: "Phí Phương Anh"
       },
       {
-      class:"Tu-Man-Anh",
-      img:"./assets/img/tumananh.jpg",
-      title:"Từ Màn Ảnh",
-      description:"Nhạc phim Vincenzo, Người Yêu Tôi Là Hồ Ly... và những bộ phim khác"
+        class: "Tu-Man-Anh",
+        img: "./assets/img/tumananh.jpg",
+        title: "Từ Màn Ảnh",
+        description: "Nhạc phim Vincenzo, Người Yêu Tôi Là Hồ Ly... và những bộ phim khác"
       },
       {
-        class:"Dinner-With-Friends",
+        class: "Dinner-With-Friends",
 
-        img:"./assets/img/diner.jpg",
-        title:"Dinner with Friends",
-        description:"Dinner with Friends? Here's the perfect playlist."
+        img: "./assets/img/diner.jpg",
+        title: "Dinner with Friends",
+        description: "Dinner with Friends? Here's the perfect playlist."
       },
       {
-        class:"Songs-to-Sing-in-the-Shower",
-        img:"./assets/img/songstosing.jpg",
-        title:"Songs to Sing in the Shower",
-        description:"Make your shower more uplifting by singing along to these hits."
+        class: "Songs-to-Sing-in-the-Shower",
+        img: "./assets/img/songstosing.jpg",
+        title: "Songs to Sing in the Shower",
+        description: "Make your shower more uplifting by singing along to these hits."
       },
-          
-      ],
-      dataListSongs: [
-        {
-          id: "Vpop-Khong-The-Thieu",
-          imgName:"V-pop",
-          title:"V-Pop Không Thể Thiếu",
-          bg:"bg--Vpop-Khong-The-Thieu",
-                  description:"V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Hứa Kim Tuyền, Hoàng Duyên"  
-        },
-        {
-        
+
+    ],
+    dataListSongs: [
+      {
+        id: "Vpop-Khong-The-Thieu",
+        imgName: "V-pop",
+        title: "V-Pop Không Thể Thiếu",
+        bg: "bg--Vpop-Khong-The-Thieu",
+        description: "V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Hứa Kim Tuyền, Hoàng Duyên"
+      },
+      {
+
         id: "Pop-Rising",
-        imgName:"poprising",
-        title:"Pop Rising Vietnam",
-        bg:"bg--Pop-Siring",
-                description:"Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Orange, Hoàng Dũng"
-        },
-        {
-        
+        imgName: "poprising",
+        title: "Pop Rising Vietnam",
+        bg: "bg--Pop-Siring",
+        description: "Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Orange, Hoàng Dũng"
+      },
+      {
+
         id: "Nghe-gi",
-        imgName:"nghegi",
-        title:"Thiên Hạ Nghe Gì",
-        bg:"bg--Nghe-gi",
-                description:"Những gì mà người bên cạnh bạn đang nghe... Ảnh bìa: The Weeknd, Ariana Grande"
-        },
-        {
-        
+        imgName: "nghegi",
+        title: "Thiên Hạ Nghe Gì",
+        bg: "bg--Nghe-gi",
+        description: "Những gì mà người bên cạnh bạn đang nghe... Ảnh bìa: The Weeknd, Ariana Grande"
+      },
+      {
+
         id: "Fresh-Find",
-        imgName:"freshFind",
-        title:"Fresh Finds Vietnam",
-        bg:"bg--Fresh-Find",
-                description:"Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: buitruonglinh"
-        },
-        {
-        
+        imgName: "freshFind",
+        title: "Fresh Finds Vietnam",
+        bg: "bg--Fresh-Find",
+        description: "Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: buitruonglinh"
+      },
+      {
+
         id: "Top50-VietNam",
-        imgName:"top50",
-        title:"Top 50 - Vietnam",
-        bg:"bg--Top50-VietNam",
-                description:"Your daily update of the most played tracks right now - Vietnam."
-        },
-        {
-        
+        imgName: "top50",
+        title: "Top 50 - Vietnam",
+        bg: "bg--Top50-VietNam",
+        description: "Your daily update of the most played tracks right now - Vietnam."
+      },
+      {
+
         id: "Top50-Global",
-        imgName:"top50Global",
-        title:"Top 50 - Global",
-        bg:"bg--Top50-Global",
-                description:"Your daily update of the most played tracks right now - Vietnam."
-        },
-        {
-        
+        imgName: "top50Global",
+        title: "Top 50 - Global",
+        bg: "bg--Top50-Global",
+        description: "Your daily update of the most played tracks right now - Vietnam."
+      },
+      {
+
         id: "Sleep",
-        imgName:"sleep",
-        title:"Sleep",
-        bg:"bg--Sleep",
-                description:"Gentle ambient piano to help you fall asleep."
-        },
-        {
-        
+        imgName: "sleep",
+        title: "Sleep",
+        bg: "bg--Sleep",
+        description: "Gentle ambient piano to help you fall asleep."
+      },
+      {
+
         id: "Peaceful-Piano",
-        imgName:"peacefull",
-        title:"Peaceful Piano",
-        bg:"bg--Peaceful-Piano",
-                description:"Relax and indulge with beautiful piano pieces"
-        },
-        {
-        
+        imgName: "peacefull",
+        title: "Peaceful Piano",
+        bg: "bg--Peaceful-Piano",
+        description: "Relax and indulge with beautiful piano pieces"
+      },
+      {
+
         id: "Tat-Den",
-        imgName:"tatden",
-        title:"Tắt Đèn",
-        bg:"bg--Tat-Den",
-                description:"Không gì bằng một giấc ngủ ngon cùng những giai điệu đẹp."
-        },
-        {
-        
+        imgName: "tatden",
+        title: "Tắt Đèn",
+        bg: "bg--Tat-Den",
+        description: "Không gì bằng một giấc ngủ ngon cùng những giai điệu đẹp."
+      },
+      {
+
         id: "Baby-Sleep",
-        imgName:"babysleep",
-        title:"Baby Sleep",
-        bg:"bg--Baby-Sleep",
-                description:"Soothing instrumental music for sleepy babies."
-        },
-        {
-        
+        imgName: "babysleep",
+        title: "Baby Sleep",
+        bg: "bg--Baby-Sleep",
+        description: "Soothing instrumental music for sleepy babies."
+      },
+      {
+
         id: "Rain-Sounds",
-        imgName:"RainSounds",
-        title:"Rain Sounds",
-        bg:"bg--Rain-Sounds",
-                description:"Steady rain without any thunder."
-        },
-        {
-        
+        imgName: "RainSounds",
+        title: "Rain Sounds",
+        bg: "bg--Rain-Sounds",
+        description: "Steady rain without any thunder."
+      },
+      {
+
         id: "Em-Dem",
-        imgName:"emDEM",
-        title:"Êm Đềm",
-        bg:"bg--Em-Dem",
-                  description:"Thư giãn cùng những giai điệu dịu êm"
-        },
-        {
-            
-            id: "Ta-Noi-No-Dzui",
-            imgName:"TANOINOVUI",
-            title:"Ta Nói Nó Dzui",
-            bg:"bg--Ta-Noi-No-Dzui",
-                      description:"Cười như mọi ngày, cày như mọi người. "  
-        },
-        {
-          
-          id: "Phut-Co-Don-Ngay-Mua",
-          imgName:"phutcodonngaymua",
-          title:"Phút Cô Đơn Ngày Mưa",
-          bg:"bg--Phut-Co-Don-Ngay-Mua",
-                    description:"Giọt mưa trên cửa kính gợi ký ức về một thời đã xa."
-        },
-        {
-          
-          id: "Dieu-Buon-Nhat",
-          imgName:"dieubuonhat",
-          title:"Điều Buồn Nhất",
-          bg:"bg--Dieu-Buon-Nhat",
-                    description:"Điều buồn nhất là anh biết lại làm như không biết... Ảnh bìa: T.R.I"
-        },
-        {
-          
-          id: "Alone-Again",
-          imgName:"aloneagain",
-          title:"Alone Again",
-          bg:"bg--Alone-Again",
-                  description:"Being alone (again) can be tough, but these songs will keep you company."  
-        },
-        {
-        
+        imgName: "emDEM",
+        title: "Êm Đềm",
+        bg: "bg--Em-Dem",
+        description: "Thư giãn cùng những giai điệu dịu êm"
+      },
+      {
+
+        id: "Ta-Noi-No-Dzui",
+        imgName: "TANOINOVUI",
+        title: "Ta Nói Nó Dzui",
+        bg: "bg--Ta-Noi-No-Dzui",
+        description: "Cười như mọi ngày, cày như mọi người. "
+      },
+      {
+
+        id: "Phut-Co-Don-Ngay-Mua",
+        imgName: "phutcodonngaymua",
+        title: "Phút Cô Đơn Ngày Mưa",
+        bg: "bg--Phut-Co-Don-Ngay-Mua",
+        description: "Giọt mưa trên cửa kính gợi ký ức về một thời đã xa."
+      },
+      {
+
+        id: "Dieu-Buon-Nhat",
+        imgName: "dieubuonhat",
+        title: "Điều Buồn Nhất",
+        bg: "bg--Dieu-Buon-Nhat",
+        description: "Điều buồn nhất là anh biết lại làm như không biết... Ảnh bìa: T.R.I"
+      },
+      {
+
+        id: "Alone-Again",
+        imgName: "aloneagain",
+        title: "Alone Again",
+        bg: "bg--Alone-Again",
+        description: "Being alone (again) can be tough, but these songs will keep you company."
+      },
+      {
+
         id: "Young-Wild-Free",
-        imgName:"youndandFree",
-        title:"Young, Wild & Free",
-        bg:"bg--Young-Wild-Free",
-                description:"That’s how its supposed to be. Living young, wild and free!"
-        },
-        {
-        
+        imgName: "youndandFree",
+        title: "Young, Wild & Free",
+        bg: "bg--Young-Wild-Free",
+        description: "That’s how its supposed to be. Living young, wild and free!"
+      },
+      {
+
         id: "New-Music-Friday-Vietnam",
-        imgName:"friday",
-        title:"New Music Friday Vietnam",
-        bg:"bg--New-Music-Friday-Vietnam",
-                description:"Những chiếc nhạc mới trong tuần, được tuyển chọn cẩn thận. Ảnh bìa: Ngọt"
-        },
-        {
-          
-          id: "Save-Your-Tears-Remix",
-          imgName:"saveyourremix",
-          title:"Save Your Tears (Remix)",
-          bg:"bg--Save-Your-Tears-Remix",
-                  description:"The Weeknd,Ariana Grande"  
-        },
-        {     
+        imgName: "friday",
+        title: "New Music Friday Vietnam",
+        bg: "bg--New-Music-Friday-Vietnam",
+        description: "Những chiếc nhạc mới trong tuần, được tuyển chọn cẩn thận. Ảnh bìa: Ngọt"
+      },
+      {
+
+        id: "Save-Your-Tears-Remix",
+        imgName: "saveyourremix",
+        title: "Save Your Tears (Remix)",
+        bg: "bg--Save-Your-Tears-Remix",
+        description: "The Weeknd,Ariana Grande"
+      },
+      {
         id: "Khi-Em-Lon",
-        imgName:"khiemlon",
-        title:"khi em lớn",
-        bg:"bg--Khi-Em-Lon",
-        description:"orange,hoang dung"
-        },
-        {
-        
+        imgName: "khiemlon",
+        title: "khi em lớn",
+        bg: "bg--Khi-Em-Lon",
+        description: "orange,hoang dung"
+      },
+      {
+
         id: "de-quen",
-        title:"để quên",
-        imgName:"dequen",
-        bg:"bg--de-quen",
-        description:"Ngọt"
-        },
-        {
-          id:"Intense-Studying",
-          imgName:"studying",
-          bg:"bg--Intense-Studying",
-          title:"Intense Studying",
+        title: "để quên",
+        imgName: "dequen",
+        bg: "bg--de-quen",
+        description: "Ngọt"
+      },
+      {
+        id: "Intense-Studying",
+        imgName: "studying",
+        bg: "bg--Intense-Studying",
+        title: "Intense Studying",
 
-                  description:"Focus-enhancing piano for your study session."
-        },
-        {
-          
-          id: "rang-khon",
-          imgName:"rangkhon",
-          title:"Răng Khôn (feat. RIN9)",
-          bg:"bg--rang-khon",
-                  description:"Phí Phương Anh"  
-        },
-        {
-        
+        description: "Focus-enhancing piano for your study session."
+      },
+      {
+
+        id: "rang-khon",
+        imgName: "rangkhon",
+        title: "Răng Khôn (feat. RIN9)",
+        bg: "bg--rang-khon",
+        description: "Phí Phương Anh"
+      },
+      {
+
         id: "THoai-Mai-Gac-Chan-Len",
-        imgName:"thoaimai",
-        title:"Từ Màn Ảnh",
-        bg:"bg--THoai-Mai-Gac-Chan-Len",
-                description:"Nhạc phim Vincenzo, Người Yêu Tôi Là Hồ Ly... và những bộ phim khác"
-        },
-        {
-        
+        imgName: "thoaimai",
+        title: "Từ Màn Ảnh",
+        bg: "bg--THoai-Mai-Gac-Chan-Len",
+        description: "Nhạc phim Vincenzo, Người Yêu Tôi Là Hồ Ly... và những bộ phim khác"
+      },
+      {
+
         id: "Tu-Man-Anh",
-        imgName:"tumananh",
-        title:"Dinner with Friends",
-        bg:"bg--Tu-Man-Anh",
-                  description:"Dinner with Friends? Here's the perfect playlist."
-        },
-        {
-          
-          id: "Dinner-With-Friends",
-          imgName:"diner",
-          title:"Songs to Sing in the Shower",
-          bg:"bg--Dinner-With-Friends",
-                  description:"Make your shower more uplifting by singing along to these hits."  
-        },
-        {
-          
-          id: "Songs-to-Sing-in-the-Shower",
-          imgName:"songstosing",
-          bg:"bg--Songs-to-Sing-in-the-Shower",
-        },
-      ],
-      handleEvent() {
-        const _this= this;
-        // ẩn thanh tìm kiếm
-        $('#v-pills-home-tab').click(() => {
-          $('.search').addClass('d-none')
-        })
-
-        // hiện thanh tim kiếm 
-        $('#v-pills-profile-tab').click(() => {
-          $('.search').removeClass('d-none')
-        })
-
-        // hiẹn ra ablum khi tìm kiếm
-        $('.timBaiHat').change((e) => {
-          $('.tab-pane').removeClass("show active");
-          $('#page-listSongs').addClass('show active');
-          $('.ablum-Songs').remove();
-
-          let value = e.target.value.trim();
-          if (value === '') {
-            _this.renderError();
-          }
-          else {
-            _this.renderAlbum(value);
-          }
-          return;
-        })
-
+        imgName: "tumananh",
+        title: "Dinner with Friends",
+        bg: "bg--Tu-Man-Anh",
+        description: "Dinner with Friends? Here's the perfect playlist."
       },
-      renderAlbum(value) {
-        $('#khongTImThay').remove();
-        const valueInput = new RegExp(value,'i');
-          const ketQuaTimKiem = this.dataAlbum.filter((song) => {
-            return  valueInput.test(song.title);
-          })
-          if(ketQuaTimKiem.length === 0) {
-            this.renderError();
-          }
-          else {
-            const htmls = ketQuaTimKiem.map((song) => {
-                return ` 
+      {
+
+        id: "Dinner-With-Friends",
+        imgName: "diner",
+        title: "Songs to Sing in the Shower",
+        bg: "bg--Dinner-With-Friends",
+        description: "Make your shower more uplifting by singing along to these hits."
+      },
+      {
+
+        id: "Songs-to-Sing-in-the-Shower",
+        imgName: "songstosing",
+        bg: "bg--Songs-to-Sing-in-the-Shower",
+      },
+    ],
+    handleEvent() {
+      const _this = this;
+      // ẩn thanh tìm kiếm
+      $('#v-pills-home-tab').click(() => {
+        $('.search').addClass('d-none')
+      })
+
+      // hiện thanh tim kiếm 
+      $('#v-pills-profile-tab').click(() => {
+        $('.search').removeClass('d-none')
+      })
+
+      // hiẹn ra ablum khi tìm kiếm
+      $('.timBaiHat').change((e) => {
+        $('.tab-pane').removeClass("show active");
+        $('#page-listSongs').addClass('show active');
+        $('.ablum-Songs').remove();
+
+        let value = e.target.value.trim();
+        if (value === '') {
+          _this.renderError();
+        }
+        else {
+          _this.renderAlbum(value);
+        }
+        return;
+      })
+
+    },
+    renderAlbum(value) {
+      $('#khongTImThay').remove();
+      const valueInput = new RegExp(value, 'i');
+      const ketQuaTimKiem = this.dataAlbum.filter((song) => {
+        return valueInput.test(song.title);
+      })
+      if (ketQuaTimKiem.length === 0) {
+        this.renderError();
+      }
+      else {
+        const htmls = ketQuaTimKiem.map((song) => {
+          return ` 
                 <div class=" col-sm-12 col-md-4 col-lg-2 ablum-Songs p-md-4 p-xl-0">
-                <div class="card">
-                <a href="" aria-current="page" data-bs-toggle="pill" class="card-music ${song.class}" data-bs-target="Page-${song.class}" role="tab" aria-controls="Page" aria-selected="true">
-                    <img src="${song.img}" class="card-img-top" alt="">
-                  </a>
-                  <button class="click-to-play ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg>
-                  </button>
-              </div>
+                  <div class="card">
+                      <a href="" aria-current="page" data-bs-toggle="pill" class="card-music ${song.class}" data-bs-target="Page-${song.class}" role="tab" aria-controls="Page" aria-selected="true">
+                        <img src="${song.img}" class="card-img-top" alt="">
+                      </a>
+                      <button class="click-to-play ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                      </button>
+                      <div class="clicked-btn invisible d-flex  justify-content-center align-items-center">
+                        <div class="wrapper">
+                          <div class="box d-flex justify-content-between">
+                            <div class="left w-50 d-flex">
+                              <img src="./assets/img/haanhtuan.jpg" alt="">
+                            </div>
+                            <div class="right w-50 p-4 text-center">
+                              <h2>Start listening with a free Spotify account</h2>
+                              <div class="w-100 bg-login btn"><a href="./signup.html">SIGN UP FREE</a></div>
+                              <div class="w-100 bg-light btn"><a href="">DOWNLOAD APP</a></div>
+                              <p class="d-flex align-items-center">Already have an account?
+                                <span class="btn click-login"> <a href="#">LOG IN</a></span>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="close">Close</div>
+                      </div>
+                    </div>
+                      <div class="card-body mt-3">
+                        <h5 class="card-title fw-bolder">${song.title}</h5>
+                        <p class="card-text">${song.description}</p>
+                      </div>
+                  </div>
+                </div>
               `
-            });
-            listSongs.append(htmls.join('\n'));
+        });
+        listSongs.append(htmls.join('\n'));
 
-             // hiện page nghe nhạc khi click vào ablum
-            this.dataAlbum.forEach((song) => {
-                $(`.${song.class}`).click(() => {
-                    $('.tab-pane').removeClass('show active');
-                    $(`#Page-${song.class}`).addClass('show active');
-                })
-            });
-            //khi bấm vào nút play của các sản phẩm trong list
-            $(".click-to-play").click(function(){
-            $(this).next().toggleClass("invisible")
-            .find('.wrapper').css({"opacity":"1", "transform":"translateY(-10px)"})
-              });
-            $(".close").click(function(){
-              $(".clicked-btn").addClass("invisible")
-              }); 
-          }
-          
+        // hiện page nghe nhạc khi click vào ablum
+        this.dataAlbum.forEach((song) => {
+          $(`.${song.class}`).click(() => {
+            $('.tab-pane').removeClass('show active');
+            $(`#Page-${song.class}`).addClass('show active');
+          })
+        });
+        //khi bấm vào nút play của các sản phẩm trong list
+        $(".click-to-play").click(function () {
+          $(this).next().toggleClass("invisible")
+            .find('.wrapper').css({ "opacity": "1", "transform": "translateY(-10px)" })
+        });
+        $(".close").click(function () {
+          $(".clicked-btn").addClass("invisible")
+        });
+      }
 
-      },
-      renderError() {
-        $('#khongTImThay').remove();
-        const htmls = () => 
+
+    },
+    renderError() {
+      $('#khongTImThay').remove();
+      const htmls = () =>
         `
           <div class="col-12 d-flex" id='khongTImThay'>
             <h5 class="m-auto text-secondary  ">Không tìm thấy 
@@ -474,16 +497,16 @@ $(document).ready(function() {
           </div>
 
         `
-        listSongs.append(htmls);
-        
-      },
-      renderPageListSong() {
-        const htmls = this.dataListSongs.map(page =>  {
-          return `<div class="tab-pane fade ${page.bg}" id="Page-${page.id}" role="tabpanel" aria-labelledby="Btn-${page.id}">
+      listSongs.append(htmls);
+
+    },
+    renderPageListSong() {
+      const htmls = this.dataListSongs.map(page => {
+        return `<div class="tab-pane fade ${page.bg}" id="Page-${page.id}" role="tabpanel" aria-labelledby="Btn-${page.id}">
           <div class="page-listenMusic">
             <div class="bg__top-list">
               <div class="container">
-                <div class="card border-0   ">
+                <div class="card border-0">
                   <div class="row g-0">
                     <div class="col-12 col-md-4 ">
                       <img src="./assets/img/${page.imgName}.jpg" alt="" class="card-img-top ">
@@ -1040,14 +1063,14 @@ $(document).ready(function() {
             
         </div>
             </div>`
-        });
-        $('#v-pills-tabContent').append(htmls.join('\n'));
-          
-      },
-      start() {
-        this.renderPageListSong();
-        this.handleEvent();
-      }
+      });
+      $('#v-pills-tabContent').append(htmls.join('\n'));
+
+    },
+    start() {
+      this.renderPageListSong();
+      this.handleEvent();
+    }
 
   };
   app.start();
