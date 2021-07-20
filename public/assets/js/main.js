@@ -365,6 +365,14 @@ $(document).ready(function () {
       },
       {
 
+        id: "Music-For-Concentration",
+        imgName: "concentration",
+        title: "Music-For-Concentration",
+        bg: "bg--Music-For-Concentration",
+        description: "Minimalism, electronica and modern classical to concentrate to."
+      },
+      {
+
         id: "Tu-Man-Anh",
         imgName: "tumananh",
         title: "Dinner with Friends",
