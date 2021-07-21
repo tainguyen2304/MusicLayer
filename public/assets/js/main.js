@@ -83,7 +83,6 @@ $(document).ready(function () {
       },
       {
         class: "Ta-Noi-No-Dzui",
-
         img: "./assets/img/TANOINOVUI.jpg",
         title: "Ta Nói Nó Dzui",
         description: "Cười như mọi ngày, cày như mọi người. "
@@ -96,14 +95,12 @@ $(document).ready(function () {
       },
       {
         class: "Dieu-Buon-Nhat",
-
         img: "./assets/img/dieubuonhat.jpg",
         title: "Điều Buồn Nhất",
         description: "Điều buồn nhất là anh biết lại làm như không biết... Ảnh bìa: T.R.I"
       },
       {
         class: "Alone-Again",
-
         img: "./assets/img/aloneagain.jpg",
         title: "Alone Again",
         description: "Being alone (again) can be tough, but these songs will keep you company."
@@ -146,7 +143,6 @@ $(document).ready(function () {
       },
       {
         class: "rang-khon",
-
         img: "./assets/img/rangkhon.jpg",
         title: "Răng Khôn (feat. RIN9)",
         description: "Phí Phương Anh"
@@ -159,7 +155,6 @@ $(document).ready(function () {
       },
       {
         class: "Dinner-With-Friends",
-
         img: "./assets/img/diner.jpg",
         title: "Dinner with Friends",
         description: "Dinner with Friends? Here's the perfect playlist."
@@ -169,6 +164,13 @@ $(document).ready(function () {
         img: "./assets/img/songstosing.jpg",
         title: "Songs to Sing in the Shower",
         description: "Make your shower more uplifting by singing along to these hits."
+      },
+      {
+
+        class: "Music-For-Concentration",
+        img: "./assets/img/concentration.jpg",
+        title: "Music For Concentration",
+        description: "Minimalism, electronica and modern classical to concentrate to."
       },
 
     ],
@@ -344,7 +346,6 @@ $(document).ready(function () {
         imgName: "studying",
         bg: "bg--Intense-Studying",
         title: "Intense Studying",
-
         description: "Focus-enhancing piano for your study session."
       },
       {
@@ -356,18 +357,17 @@ $(document).ready(function () {
         description: "Phí Phương Anh"
       },
       {
-
         id: "THoai-Mai-Gac-Chan-Len",
         imgName: "thoaimai",
-        title: "Từ Màn Ảnh",
+        title: "Thoải Mái Gác Chân Lên",
         bg: "bg--THoai-Mai-Gac-Chan-Len",
-        description: "Nhạc phim Vincenzo, Người Yêu Tôi Là Hồ Ly... và những bộ phim khác"
+        description: "Một ngày nghỉ thoải mái, hãy cùng gác chân lên ghế, thư giãn và chill."
       },
       {
 
         id: "Music-For-Concentration",
         imgName: "concentration",
-        title: "Music-For-Concentration",
+        title: "Music For Concentration",
         bg: "bg--Music-For-Concentration",
         description: "Minimalism, electronica and modern classical to concentrate to."
       },
@@ -375,23 +375,24 @@ $(document).ready(function () {
 
         id: "Tu-Man-Anh",
         imgName: "tumananh",
-        title: "Dinner with Friends",
+        title: "Từ Màn Ảnh",
         bg: "bg--Tu-Man-Anh",
-        description: "Dinner with Friends? Here's the perfect playlist."
+        description: "Nhạc phim Vincenzo, Người Yêu Tôi Là Hồ Ly... và những bộ phim khác"
       },
       {
 
         id: "Dinner-With-Friends",
         imgName: "diner",
-        title: "Songs to Sing in the Shower",
+        title: "Dinner With Friends",
         bg: "bg--Dinner-With-Friends",
-        description: "Make your shower more uplifting by singing along to these hits."
+        description: "Dinner with Friends? Here's the perfect playlist."
       },
       {
 
         id: "Songs-to-Sing-in-the-Shower",
         imgName: "songstosing",
         bg: "bg--Songs-to-Sing-in-the-Shower",
+        description: "Make your shower more uplifting by singing along to these hits."
       },
     ],
     handleEvent() {
@@ -449,7 +450,7 @@ $(document).ready(function () {
                         <div class="wrapper">
                           <div class="box d-flex justify-content-between">
                             <div class="left w-50 d-flex">
-                              <img src="./assets/img/haanhtuan.jpg" alt="">
+                              <img src=${song.img} alt="">
                             </div>
                             <div class="right w-50 p-4 text-center">
                               <h2>Start listening with a free Spotify account</h2>
